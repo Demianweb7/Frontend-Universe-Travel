@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>像素宇宙观察</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    
+    <div class="ui-container">
+        <div class="title">像素宇宙观察</div>
+        <div>已发现事件: <span id="eventCount">0</span>/<span id="totalEvents">0</span></div>
+        <div>探索进度: <span id="progress">0</span>%</div>
+    </div>
+    
+    <div class="status-bar">
+        <div>观察维度: 
+            <span id="coordX" class="dimension-value">0</span>
+            <span class="dimension-separator">:</span>
+            <span id="coordY" class="dimension-value">0</span>
+        </div>
+        <div>宇宙时间: <span id="universeTime">0</span></div>
+        <div class="dimension-indicator">时空曲率: <span id="curvature">0.00</span></div>
+    </div>
+    
+    <div class="event-notification" id="eventNotification"></div>
+    
+    <button class="pixel-button" id="collectionButton">📁</button>
+    <button class="pixel-button" id="muteButton">🔇</button>
+    
+    <div id="clickListener" style="position: fixed; left: 10px; bottom: 70px;">
+        黑暗森林提灯亮度: <span id="clickCounter">0</span>/99
+        <div id="clickMeter"><div></div></div>
+    </div>
+    
+    <div class="collection-modal" id="collectionModal">
+        <h2 style="margin: 0; padding: 10px;">宇宙事件图鉴</h2>
+        <!-- 新增X形关闭按钮 -->
+        <button class="pixel-button close-x" id="closeCollection"></button>
+        <!-- 添加固定宽度容器适配5列布局 -->
+        <div style="display: flex; justify-content: center;">
+            <div class="collection-grid" id="collectionGrid"></div>
+        </div>
+    </div>
+    
+    <!-- 修改描述模态框结构 -->
+    <div class="collection-modal" id="descriptionModal">
+        <h2 style="margin: 0; padding: 10px;">天文事件说明</h2>
+        <!-- 新增X形关闭按钮 -->
+        <button class="pixel-button close-x" id="closeDescription" style="position: absolute; top: 10px; right: 10px; width: 25px; height: 25px; padding: 0;">
+            &times;
+        </button>
+        <div id="descriptionContent" style="padding: 10px;"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
